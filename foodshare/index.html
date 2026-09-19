@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodShare – Share Food · Reduce Waste · Fight Hunger</title>
+  <meta name="description" content="FoodShare is a community-driven platform that connects surplus food with people in need. Share Food, Reduce Waste, Fight Hunger." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" onclick="showPage('home')">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-food">Food</span><span class="logo-share">Share</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+        <li><a href="#" onclick="showPage('donate')" data-page="donate">Donate</a></li>
+        <li><a href="#" onclick="showPage('find')" data-page="find">Find Food</a></li>
+        <li><a href="#" onclick="showPage('request')" data-page="request">Request</a></li>
+        <li><a href="#" onclick="showPage('track')" data-page="track">Track</a></li>
+        <li><a href="#" onclick="showPage('dashboard')" data-page="dashboard">Dashboard</a></li>
+        <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
+        <li><a href="#" onclick="showPage('contact')" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-outline" onclick="showPage('register')">Login</button>
+        <button class="btn-primary" onclick="showPage('register')">Sign Up</button>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════ PAGE WRAPPER ═══════════════════════════ -->
+  <main id="pageContainer">
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░ PAGE 1: HOME ░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="page active" id="page-home">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              Community-Driven Food Platform
+            </div>
+            <h1 class="hero-headline">
+              Share Food<br/>
+              <span class="text-gradient">Reduce Waste</span><br/>
+              Fight Hunger
+            </h1>
+            <p class="hero-sub">Every meal shared makes a difference! Connect surplus food with people in need across your community.</p>
+            <div class="hero-btns">
+              <button class="btn-hero-primary" onclick="showPage('donate')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21C12 21 3 13.5 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-9 13-9 13z"/></svg>
+                Donate Food
+              </button>
+              <button class="btn-hero-secondary" onclick="showPage('find')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                Find Food
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card-float hero-card-1">
+              <div class="hc-icon">🍱</div>
+              <div class="hc-info"><strong>1,200+</strong><span>Meals Shared</span></div>
+            </div>
+            <div class="hero-image-wrap">
+            <div class="hero-plate">
+              <img src="images/hero_background.jpg" alt="Community food sharing" class="hero-real-img" />
+              <div class="plate-glow"></div>
+            </div>
+          </div>
+            <div class="hero-card-float hero-card-2">
+              <div class="hc-icon">🤝</div>
+              <div class="hc-info"><strong>350+</strong><span>Donors</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS STRIP -->
+      <div class="stats-strip">
+        <div class="stat-item" data-target="1200">
+          <div class="stat-icon">🍽️</div>
+          <div class="stat-number" id="stat1">0</div>
+          <div class="stat-label">Meals Shared</div>
+        </div>
+        <div class="stat-item" data-target="350">
+          <div class="stat-icon">👥</div>
+          <div class="stat-number" id="stat2">0</div>
+          <div class="stat-label">Donors</div>
+        </div>
+        <div class="stat-item" data-target="40">
+          <div class="stat-icon">🏢</div>
+          <div class="stat-number" id="stat3">0</div>
+          <div class="stat-label">NGOs / Volunteers</div>
+        </div>
+        <div class="stat-item" data-target="10">
+          <div class="stat-icon">📍</div>
+          <div class="stat-number" id="stat4">0</div>
+          <div class="stat-label">Cities</div>
+        </div>
+      </div>
+
+      <!-- FEATURES GRID -->
+      <div class="section">
+        <div class="section-header">
+          <h2>Why Choose <span class="text-green">FoodShare?</span></h2>
+          <p>We make food sharing simple, impactful, and community-driven</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#43a047,#66bb6a)">🌱</div>
+            <h3>Save Food</h3>
+            <p>Prevent good food from going to waste by sharing surplus with those who need it most.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#e67e22,#f39c12)">🤝</div>
+            <h3>Help People</h3>
+            <p>Connect directly with families, shelters, and NGOs who need food donations.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">💚</div>
+            <h3>Support Community</h3>
+            <p>Build a stronger, more compassionate community through collective action.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#2980b9,#3498db)">🌍</div>
+            <h3>Sustainable Future</h3>
+            <p>Contribute to a greener planet by reducing food waste and its environmental impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION -->
+      <div class="mission-section">
+        <div class="mission-visual">
+          <div class="mission-circle mission-img-wrap">
+            <img src="images/mission_volunteers.jpg" alt="Volunteers distributing food" class="mission-real-img" />
+          </div>
+          <div class="mission-tag">Together We Can End Hunger</div>
+        </div>
+        <div class="mission-content">
+          <h2>Our <span class="text-green">Mission</span></h2>
+          <p>To reduce food wastage by connecting surplus food with people in need through a simple and efficient platform. Every meal that we save is a step towards a hunger-free world.</p>
+          <div class="mission-goals">
+            <div class="goal-item"><span>✅</span> Zero Hunger Communities</div>
+            <div class="goal-item"><span>♻️</span> Responsible Food Consumption</div>
+            <div class="goal-item"><span>🌎</span> Sustainable Development Goals</div>
+          </div>
+          <button class="btn-primary" onclick="showPage('register')" style="margin-top:1.5rem">Join Us Today →</button>
+        </div>
+      </div>
+
+      <!-- TESTIMONIAL STRIP -->
+      <div class="quote-strip">
+        <div class="quote-text">"Good Food Should Feed People, Not Landfills."</div>
+        <div class="quote-actions">
+          <div class="qa-item">
+            <div class="qa-icon">🤲</div>
+            <span>Share Today</span>
+          </div>
+          <div class="qa-item">
+            <div class="qa-icon">🏘️</div>
+            <span>Support Communities</span>
+          </div>
+          <div class="qa-item">
+            <div class="qa-icon">💚</div>
+            <span>Build a Healthier Tomorrow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 2: DONOR REGISTRATION ░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-register">
+      <div class="form-page">
+        <div class="form-hero">
+          <div class="form-hero-content">
+            <h1>Register as a <span class="text-green">Donor</span></h1>
+            <p>Join us to share your surplus food and make a positive impact on your community.</p>
+            <div class="form-hero-quote">"Your surplus food can be someone's next meal."</div>
+          </div>
+          <div class="form-hero-art">
+            <div class="art-circle art-img">
+              <img src="images/food_veg_rice.jpg" alt="Vegetable rice" class="art-real-img" />
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Donor Registration</h2>
+            <p>Fill in your details to register</p>
+          </div>
+          <form id="registerForm" onsubmit="handleRegister(event)" class="form-grid">
+            <div class="form-group">
+              <label for="reg-name">Full Name *</label>
+              <input type="text" id="reg-name" placeholder="e.g. Ravi Kumar" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-type">Donor Type *</label>
+              <select id="reg-type" required>
+                <option value="">Select Type</option>
+                <option>Restaurant</option>
+                <option>Individual</option>
+                <option>Hotel/Caterer</option>
+                <option>Grocery Store</option>
+                <option>Corporate</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">Phone Number *</label>
+              <input type="tel" id="reg-phone" placeholder="9876543210" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email</label>
+              <input type="email" id="reg-email" placeholder="ravi@example.com" />
+            </div>
+            <div class="form-group full">
+              <label for="reg-location">Location *</label>
+              <input type="text" id="reg-location" placeholder="Vijayawada" required />
+            </div>
+            <div class="form-group full">
+              <label for="reg-address">Address *</label>
+              <textarea id="reg-address" placeholder="MG Road, Benz Circle, Vijayawada" rows="3" required></textarea>
+            </div>
+            <div class="form-group full">
+              <label class="checkbox-label">
+                <input type="checkbox" id="reg-agree" required />
+                <span class="checkmark"></span>
+                I agree to share accurate information
+              </label>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn-form-submit">Register as Donor</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 3: DONATE FOOD ░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-donate">
+      <div class="form-page">
+        <div class="form-hero" style="background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047)">
+          <div class="form-hero-content">
+            <h1>Donate <span style="color:#a5d6a7">Surplus Food</span></h1>
+            <p>Fill in the details of the food you want to donate and help someone in need today.</p>
+            <div class="form-hero-quote">"Good food should be shared, not wasted."</div>
+          </div>
+          <div class="form-hero-art">
+            <div class="art-circle art-img" style="background:rgba(255,255,255,0.15)">
+              <img src="images/food_biryani.jpg" alt="Food donation" class="art-real-img" />
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Donate Food</h2>
+            <p>Share Care · Make a Difference</p>
+          </div>
+          <form id="donateForm" onsubmit="handleDonate(event)" class="form-grid">
+            <div class="form-group">
+              <label for="don-name">Food Name *</label>
+              <input type="text" id="don-name" placeholder="e.g. Vegetable Rice" required />
+            </div>
+            <div class="form-group">
+              <label for="don-category">Food Category *</label>
+              <select id="don-category" required>
+                <option value="">Select Category</option>
+                <option>Vegetarian</option>
+                <option>Non-Vegetarian</option>
+                <option>Vegan</option>
+                <option>Bakery/Fruit</option>
+                <option>Beverages</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="don-qty">Quantity (meals) *</label>
+              <input type="number" id="don-qty" placeholder="30" min="1" required />
+            </div>
+            <div class="form-group">
+              <label for="don-prepared">Prepared Date & Time *</label>
+              <input type="datetime-local" id="don-prepared" required />
+            </div>
+            <div class="form-group">
+              <label for="don-consume">Consume Before *</label>
+              <input type="datetime-local" id="don-consume" required />
+            </div>
+            <div class="form-group">
+              <label for="don-pickup">Pickup Location *</label>
+              <input type="text" id="don-pickup" placeholder="Benz Circle, Vijayawada" required />
+            </div>
+            <div class="form-group">
+              <label for="don-contact">Contact Number *</label>
+              <input type="tel" id="don-contact" placeholder="9876543210" required />
+            </div>
+            <div class="form-group full">
+              <label for="don-info">Additional Information</label>
+              <textarea id="don-info" placeholder="Freshly prepared. Kindly collect before 4 PM." rows="3"></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn-form-submit">Donate Food 🍽️</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 4: FIND FOOD ░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-find">
+      <div class="find-page">
+        <div class="find-header">
+          <h1>Find <span class="text-green">Available Food</span></h1>
+          <p>Search and request food from donors in your area</p>
+          <div class="search-bar">
+            <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="searchInput" placeholder="Search food (e.g., rice, idly, fruits...)" oninput="filterFood()" />
+            <button class="btn-search" onclick="filterFood()">Search</button>
+          </div>
+          <div class="filter-bar">
+            <select id="filterCategory" onchange="filterFood()">
+              <option value="">All Categories</option>
+              <option>Vegetarian</option>
+              <option>Non-Vegetarian</option>
+              <option>Vegan</option>
+              <option>Bakery/Fruit</option>
+            </select>
+            <select id="filterLocation" onchange="filterFood()">
+              <option value="">All Locations</option>
+              <option>Vijayawada</option>
+              <option>Guntur</option>
+              <option>Yangagiri</option>
+            </select>
+            <select id="filterStatus" onchange="filterFood()">
+              <option value="">All Status</option>
+              <option>Available</option>
+              <option>Requested</option>
+              <option>Collected</option>
+            </select>
+          </div>
+        </div>
+        <div class="food-grid" id="foodGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 5: REQUEST FOOD ░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-request">
+      <div class="form-page">
+        <div class="form-hero" style="background:linear-gradient(135deg,#e65100,#f57c00,#ff9800)">
+          <div class="form-hero-content">
+            <h1>Request <span style="color:#ffe0b2">Food</span></h1>
+            <p>Fill in your details to request food from our generous donors network.</p>
+            <div class="form-hero-quote">"Together, we can end hunger one meal at a time."</div>
+          </div>
+          <div class="form-hero-art">
+            <div class="art-circle art-img" style="background:rgba(255,255,255,0.15)">
+              <img src="images/mission_volunteers.jpg" alt="Request food" class="art-real-img" />
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Request Food</h2>
+            <p>Fill in your details to request food</p>
+          </div>
+          <form id="requestForm" onsubmit="handleRequest(event)" class="form-grid">
+            <div class="form-group">
+              <label for="req-name">Your Name *</label>
+              <input type="text" id="req-name" placeholder="Suresh" required />
+            </div>
+            <div class="form-group">
+              <label for="req-org">Organization</label>
+              <input type="text" id="req-org" placeholder="Helping Hands NGO" />
+            </div>
+            <div class="form-group">
+              <label for="req-phone">Phone Number *</label>
+              <input type="tel" id="req-phone" placeholder="9123456789" required />
+            </div>
+            <div class="form-group">
+              <label for="req-qty">Required Quantity *</label>
+              <input type="number" id="req-qty" placeholder="30" min="1" required />
+            </div>
+            <div class="form-group">
+              <label for="req-pickup">Pickup Date & Time *</label>
+              <input type="datetime-local" id="req-pickup" required />
+            </div>
+            <div class="form-group">
+              <label for="req-location">Pickup Location *</label>
+              <input type="text" id="req-location" placeholder="Vijayawada" required />
+            </div>
+            <div class="form-group full">
+              <label for="req-purpose">Purpose *</label>
+              <textarea id="req-purpose" placeholder="Distribution to homeless people in Vijayawada..." rows="3" required></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn-form-submit" style="background:linear-gradient(135deg,#e65100,#ff9800)">Submit Request 🙏</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░ PAGE 6: DONATION STATUS TRACKING ░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-track">
+      <div class="track-page">
+        <div class="track-header">
+          <h1>Track <span class="text-green">Donation Status</span></h1>
+          <p>Check the current status of your donation or request</p>
+          <div class="track-search">
+            <input type="text" id="trackId" placeholder="Enter Donation ID or Phone Number" />
+            <button class="btn-primary" onclick="trackDonation()">Track Now</button>
+          </div>
+        </div>
+        <div class="track-result" id="trackResult">
+          <div class="track-card">
+            <div class="track-food-info">
+              <div class="track-food-img"><img src="images/food_veg_rice.jpg" alt="Vegetable Rice" style="width:64px;height:64px;border-radius:12px;object-fit:cover" /></div>
+              <div>
+                <h3>Vegetable Rice</h3>
+                <p>30 meals | Vegetarian</p>
+                <p class="track-loc">📍 Benz Circle, Vijayawada</p>
+              </div>
+              <div class="track-status-badge status-collected">Collected</div>
+            </div>
+            <div class="track-timeline">
+              <div class="timeline-item done">
+                <div class="tl-dot done"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="tl-content">
+                  <strong>Donation Created</strong>
+                  <span>18-09-2026, 11:30 AM</span>
+                </div>
+              </div>
+              <div class="timeline-item done">
+                <div class="tl-dot done"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="tl-content">
+                  <strong>Request Received</strong>
+                  <span>18-09-2026, 12:15 PM</span>
+                </div>
+              </div>
+              <div class="timeline-item done">
+                <div class="tl-dot done"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="tl-content">
+                  <strong>Food Collected</strong>
+                  <span>18-09-2026, 03:00 PM</span>
+                </div>
+              </div>
+              <div class="timeline-item pending">
+                <div class="tl-dot pending"></div>
+                <div class="tl-content">
+                  <strong>Food Distributed</strong>
+                  <span class="pending-text">Pending</span>
+                </div>
+              </div>
+            </div>
+            <div class="track-thanks">
+              <span>💚 Thank you for making a difference!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░ PAGE 7: DASHBOARD ░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-dashboard">
+      <div class="dashboard-page">
+        <div class="dash-header">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Overview of donations and impact</p>
+          </div>
+          <div class="dash-period">
+            <label>Time Period:</label>
+            <select id="timePeriod" onchange="updateDashboard()">
+              <option>This Month</option>
+              <option>This Week</option>
+              <option>All Time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat-card" style="border-top:4px solid #43a047">
+            <div class="dsc-icon">🍽️</div>
+            <div class="dsc-num">25</div>
+            <div class="dsc-label">Total Donations</div>
+          </div>
+          <div class="dash-stat-card" style="border-top:4px solid #2196f3">
+            <div class="dsc-icon">✅</div>
+            <div class="dsc-num">8</div>
+            <div class="dsc-label">Available</div>
+          </div>
+          <div class="dash-stat-card" style="border-top:4px solid #ff9800">
+            <div class="dsc-icon">📦</div>
+            <div class="dsc-num">7</div>
+            <div class="dsc-label">Collected</div>
+          </div>
+          <div class="dash-stat-card" style="border-top:4px solid #9c27b0">
+            <div class="dsc-icon">🚚</div>
+            <div class="dsc-num">10</div>
+            <div class="dsc-label">Distributed</div>
+          </div>
+        </div>
+
+        <div class="dash-charts">
+          <div class="chart-card">
+            <h3>Food Distribution Overview (Meals)</h3>
+            <div class="bar-chart" id="barChart">
+              <!-- rendered by JS -->
+            </div>
+            <div class="bar-labels">
+              <span>Available</span>
+              <span>Requested</span>
+              <span>Collected</span>
+              <span>Distributed</span>
+            </div>
+          </div>
+          <div class="chart-card impact-card">
+            <h3>Total Impact</h3>
+            <div class="impact-stats">
+              <div class="impact-item">
+                <div class="impact-big">620</div>
+                <div class="impact-label">Total Meals Shared</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-big" style="color:#ff9800">480</div>
+                <div class="impact-label">Estimated Beneficiaries</div>
+              </div>
+            </div>
+            <div class="impact-sdg">
+              <div class="sdg-badge sdg-2">
+                <span>🍽️</span>
+                <span>ZERO<br/>HUNGER</span>
+              </div>
+              <div class="sdg-badge sdg-12">
+                <span>♾️</span>
+                <span>RESPONSIBLE<br/>CONSUMPTION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card" style="margin-top:1.5rem">
+          <h3>Recent Donations</h3>
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Food Item</th>
+                <th>Category</th>
+                <th>Qty</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="recentDonations">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 8: ABOUT / AWARENESS ░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-about">
+      <div class="about-page">
+        <!-- WHY FOODSHARE -->
+        <div class="about-hero">
+          <div class="ah-content">
+            <h1>Why <span class="text-green">FoodShare?</span></h1>
+            <p>A greener, healthier, hunger-free world starts with us. Small actions can make a big impact. Share food, spread hope.</p>
+            <div class="quote-card" style="margin-top:1.5rem">"Small actions can make a big impact. Share food, spread hope."</div>
+          </div>
+          <div class="ah-img-wrap">
+            <img src="images/about_zero_waste.jpg" alt="Zero food waste concept" class="about-hero-img" />
+          </div>
+        </div>
+
+        <div class="about-pillars">
+          <div class="pillar-card" style="--pc:180,211,94">
+            <div class="pillar-icon">♻️</div>
+            <h3>Reduce Food Waste</h3>
+            <p>Millions of tons of food are wasted every year while people go hungry. FoodShare bridges this gap.</p>
+          </div>
+          <div class="pillar-card" style="--pc:255,152,0">
+            <div class="pillar-icon">🤲</div>
+            <h3>Feed People in Need</h3>
+            <p>Connect surplus food to shelters, NGOs, and individuals who need it most in real time.</p>
+          </div>
+          <div class="pillar-card" style="--pc:33,150,243">
+            <div class="pillar-icon">🏘️</div>
+            <h3>Support Communities</h3>
+            <p>Strengthen local communities by fostering a culture of sharing, caring, and sustainability.</p>
+          </div>
+          <div class="pillar-card" style="--pc:76,175,80">
+            <div class="pillar-icon">🌍</div>
+            <h3>Protect the Environment</h3>
+            <p>Reduce carbon emissions from food waste and contribute to a sustainable, green future.</p>
+          </div>
+        </div>
+
+        <!-- TIPS -->
+        <div class="tips-section">
+          <div class="tips-content">
+            <h2>Tips to <span class="text-green">Reduce Food Waste</span></h2>
+            <ul class="tips-list">
+              <li><span class="tip-check">✅</span> Plan your meals</li>
+              <li><span class="tip-check">✅</span> Store food properly</li>
+              <li><span class="tip-check">✅</span> Share surplus food</li>
+              <li><span class="tip-check">✅</span> Donate instead of discarding</li>
+              <li><span class="tip-check">✅</span> Use a FIFO method for pantry items</li>
+              <li><span class="tip-check">✅</span> Compost unavoidable food scraps</li>
+            </ul>
+          </div>
+          <div class="tips-visual">
+            <img src="images/mission_volunteers.jpg" alt="Community volunteers" class="tips-real-img" />
+            <p style="margin-top:1rem">A Greener, Healthier, Hunger-Free World Starts with Us.</p>
+          </div>
+        </div>
+
+        <!-- SDGS -->
+        <div class="sdg-section">
+          <h2 style="text-align:center;margin-bottom:2rem">Our Alignment with <span class="text-green">UN SDGs</span></h2>
+          <div class="sdg-cards">
+            <div class="sdg-card" style="background:linear-gradient(135deg,#e65100,#ff7043)">
+              <div class="sdg-num">SDG 2</div>
+              <div class="sdg-icon-big">🍽️</div>
+              <div class="sdg-title">Zero Hunger</div>
+            </div>
+            <div class="sdg-card" style="background:linear-gradient(135deg,#d4a017,#f9c74f)">
+              <div class="sdg-num">SDG 12</div>
+              <div class="sdg-icon-big">♾️</div>
+              <div class="sdg-title">Responsible Consumption & Production</div>
+            </div>
+            <div class="sdg-card" style="background:linear-gradient(135deg,#1a6b3c,#43a047)">
+              <div class="sdg-num">SDG 17</div>
+              <div class="sdg-icon-big">🤝</div>
+              <div class="sdg-title">Partnerships for the Goals</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░ PAGE 9: CONTACT / FEEDBACK ░░░░░░░░░░░░░░░░░░ -->
+    <section class="page" id="page-contact">
+      <div class="contact-page">
+        <div class="contact-header">
+          <h1>Contact <span class="text-green">Us</span></h1>
+          <p>We would love to hear from you!</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-form-card">
+            <h2>Send a Message</h2>
+            <form id="contactForm" onsubmit="handleContact(event)" class="form-grid">
+              <div class="form-group full">
+                <label for="con-name">Name *</label>
+                <input type="text" id="con-name" placeholder="Sai Ruthvik" required />
+              </div>
+              <div class="form-group full">
+                <label for="con-email">Email *</label>
+                <input type="email" id="con-email" placeholder="2500030895@gmail.com" required />
+              </div>
+              <div class="form-group full">
+                <label for="con-msg">Message *</label>
+                <textarea id="con-msg" placeholder="Great initiative! Keep going!" rows="5" required></textarea>
+              </div>
+              <div class="form-group full">
+                <button type="submit" class="btn-form-submit">Send Message 💌</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-info-card">
+            <h2>Get in Touch</h2>
+            <div class="contact-info-list">
+              <div class="ci-item">
+                <div class="ci-icon">📧</div>
+                <div>
+                  <strong>Email</strong>
+                  <p>hello@foodshare.com</p>
+                </div>
+              </div>
+              <div class="ci-item">
+                <div class="ci-icon">📞</div>
+                <div>
+                  <strong>Phone</strong>
+                  <p>+91 91234 56789</p>
+                </div>
+              </div>
+              <div class="ci-item">
+                <div class="ci-icon">📍</div>
+                <div>
+                  <strong>Address</strong>
+                  <p>Vijayawada, Andhra Pradesh</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-visual">
+              <div class="cv-circle">🤝</div>
+              <p>Together for a Hunger-Free Community</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-leaf">🌿</span>
+          <span class="logo-food">Food</span><span class="logo-share">Share</span>
+        </div>
+        <p>Share Food · Reduce Waste · Fight Hunger</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="#" onclick="showPage('donate')">Donate Food</a>
+        <a href="#" onclick="showPage('find')">Find Food</a>
+        <a href="#" onclick="showPage('request')">Request Food</a>
+        <a href="#" onclick="showPage('track')">Track Status</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+        <a href="#" onclick="showPage('register')">Register</a>
+      </div>
+      <div class="footer-links">
+        <h4>Mission</h4>
+        <p style="color:#9e9e9e;font-size:.85rem;line-height:1.6">
+          Reducing food waste by connecting surplus food with people in need through a simple, efficient platform.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FoodShare. Built with 💚 for a hunger-free world.</p>
+      <p>"Good Food Brings Better Tomorrows"</p>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <!-- REQUEST MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modalTitle">Request Food</h3>
+        <button onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
