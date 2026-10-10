@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dce8f8"/><stop offset="1" stop-color="#c4d4ea"/></linearGradient></defs>
+  <rect width="900" height="500" fill="url(#g)"/>
+  <path d="M170 310h80l50-90c12-21 35-34 59-34h184c24 0 47 13 59 34l50 90h80c20 0 36 16 36 36v18H134v-18c0-20 16-36 36-36z" fill="#5475a8"/>
+  <circle cx="255" cy="364" r="44" fill="#1d2a3f"/><circle cx="255" cy="364" r="20" fill="#b9c7dc"/>
+  <circle cx="645" cy="364" r="44" fill="#1d2a3f"/><circle cx="645" cy="364" r="20" fill="#b9c7dc"/>
+  <path d="M329 234h280l42 76H287z" fill="#eef5ff" opacity=".9"/>
+  <text x="450" y="430" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#344c70">DriveEasy vehicle image</text>
+</svg>
